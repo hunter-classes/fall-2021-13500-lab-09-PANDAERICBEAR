@@ -9,11 +9,6 @@ double length(Coord3D *p){
   return length;
 }
 
-// double lengthTest(Coord3D p){
-//   double length = sqrt(pow(p.x, 2) + pow(p.y, 2) + pow(p.z, 2));
-//   return length;
-// }
-
 Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2){
   double lengthOne = sqrt(pow(p1->x, 2) + pow(p1->y, 2) + pow(p1->z, 2));
   double lengthTwo = sqrt(pow(p2->x, 2) + pow(p2->y, 2) + pow(p2->z, 2));
@@ -32,16 +27,12 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt){
 }
 
 Coord3D* createCoord3D(double x, double y, double z){
-  double newx = *new double;
-  double newy = *new double;
-  double newz = *new double;
+  Coord3D *newCoord = new Coord3D;
 
-  newx = x;
-  newy = y;
-  newz = z;
-  Coord3D coords = {newx, newy, newz};
-  Coord3D *coordsPointer = &coords;
-  return coordsPointer;
+  newCoord->x = x;
+  newCoord->y = y;
+  newCoord->z = z;
+  return newCoord;
 }
 
 void deleteCoord3D(Coord3D *p){
